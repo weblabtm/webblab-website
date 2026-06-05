@@ -69,10 +69,11 @@ function ServicesPage() {
       <section className="relative overflow-hidden bg-hero">
         {/* Background Image Overlay */}
         <img
-          src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80"
+          src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=60&auto=format&fit=crop"
           alt=""
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover opacity-[0.06]"
+          loading="eager"
         />
         <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
           <ScrollReveal variant="fade-up" duration={600}>
@@ -132,9 +133,10 @@ function ServicesPage() {
             <ScrollReveal variant="fade-up" delay={150} className="h-full">
               <div className="relative h-[340px] overflow-hidden rounded-xl border border-border/40 shadow-elegant group">
                 <img
-                  src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&q=80"
+                  src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=600&q=70&auto=format&fit=crop"
                   alt="Engineering flow"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-103"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
               </div>

@@ -26,10 +26,11 @@ function ContactPage() {
       <section className="relative overflow-hidden bg-hero">
         {/* Background Image Overlay */}
         <img
-          src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1600&q=80"
+          src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1200&q=60&auto=format&fit=crop"
           alt=""
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover opacity-[0.06]"
+          loading="eager"
         />
         <div className="relative mx-auto max-w-7xl px-6 py-20 md:py-28">
           <ScrollReveal variant="fade-up" duration={600}>
@@ -62,9 +63,10 @@ function ContactPage() {
               {/* Sidebar visual asset */}
               <div className="relative h-[240px] overflow-hidden rounded-xl border border-border/40 shadow-elegant group hidden lg:block">
                 <img
-                  src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=800&q=80"
+                  src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=600&q=70&auto=format&fit=crop"
                   alt="Workspace connection"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-103"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
               </div>

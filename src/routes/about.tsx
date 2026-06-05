@@ -37,10 +37,11 @@ function AboutPage() {
       <section className="relative overflow-hidden bg-hero">
         {/* Background Image Overlay */}
         <img
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80"
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=60&auto=format&fit=crop"
           alt=""
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover opacity-[0.08]"
+          loading="eager"
         />
         <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
           <ScrollReveal variant="fade-up" duration={600}>
@@ -62,9 +63,10 @@ function AboutPage() {
           <ScrollReveal variant="fade-up" className="h-full">
             <div className="relative h-[380px] overflow-hidden rounded-xl border border-border/40 shadow-elegant group">
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=70&auto=format&fit=crop"
                 alt="WEBBLAB workshop"
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-103"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
             </div>
@@ -138,6 +140,7 @@ function AboutPage() {
                     src={member.image}
                     alt={member.name}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
                   />
                 </div>
                 <div className="mt-6 flex-grow flex flex-col justify-between">
@@ -163,25 +166,25 @@ const teamMembers = [
     name: "Kenji Sato",
     role: "Founder & Lead Architect",
     bio: "Formerly led core infrastructure at Stripe. Weaves systems with pure TypeScript, Bun, and Nitro.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=240&h=240&q=60&auto=format&fit=crop",
   },
   {
     name: "Sarah Jenkins",
     role: "Design Director",
     bio: "Obsessed with micro-interactions and grid systems. Designs functional products that tell a story.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=240&h=240&q=60&auto=format&fit=crop",
   },
   {
     name: "Elena Rostova",
     role: "Senior Frontend Engineer",
     bio: "Specializes in modern design systems, fluid micro-animations, and client-side performance tuning.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=240&h=240&q=60&auto=format&fit=crop",
   },
   {
     name: "Marcus Vance",
     role: "Principal Engineer",
     bio: "Performance specialist. Expert in database tuning, edge networking, and security auditing.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=240&h=240&q=60&auto=format&fit=crop",
   },
 ];
 

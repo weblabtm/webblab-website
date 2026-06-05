@@ -9,6 +9,7 @@ interface SpiderWebProps {
   style?: React.CSSProperties;
   spokes?: number;
   rings?: number;
+  glow?: boolean;
 }
 
 /**
@@ -24,6 +25,7 @@ export function SpiderWeb({
   style,
   spokes = 14,
   rings = 7,
+  glow = false,
 }: SpiderWebProps) {
   const reactId = useId();
   const safeReactId = reactId.replace(/:/g, "-");
@@ -85,7 +87,7 @@ export function SpiderWeb({
         strokeWidth="0.7"
         strokeLinecap="round"
         fill="none"
-        filter={`url(#glow-${id})`}
+        {...(glow ? { filter: `url(#glow-${id})` } : {})}
         className={animated === true ? "animate-web-pulse" : ""}
       >
         {/* radial spokes */}

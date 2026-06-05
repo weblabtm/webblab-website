@@ -508,6 +508,7 @@ function ScrollWebSpot({ spot }: { spot: WebSpot }) {
 export function InteractiveWebBackground() {
   const [clickWebs, setClickWebs] = useState<ClickWeb[]>([]);
   const [mounted, setMounted] = useState(false);
+  const [renderSpots, setRenderSpots] = useState(false);
   const { pathname } = useLocation();
 
   const websRef = useRef<ClickWeb[]>([]);
@@ -517,6 +518,10 @@ export function InteractiveWebBackground() {
 
   useEffect(() => {
     setMounted(true);
+
+    const timer = setTimeout(() => {
+      setRenderSpots(true);
+    }, 1500);
 
     const isInteractiveElement = (target: HTMLElement | null): boolean => {
       let el = target;
@@ -603,6 +608,7 @@ export function InteractiveWebBackground() {
 
     window.addEventListener("click", handleWindowClick);
     return () => {
+      clearTimeout(timer);
       window.removeEventListener("click", handleWindowClick);
     };
   }, []);
@@ -616,7 +622,7 @@ export function InteractiveWebBackground() {
   return createPortal(
     <div className="absolute inset-0 pointer-events-none z-[-10] overflow-hidden">
       {/* 1. Initial Page Load Webs (Spot by Spot on scroll reveal) */}
-      {spots.map((spot) => (
+      {renderSpots && spots.map((spot) => (
         <ScrollWebSpot key={spot.id} spot={spot} />
       ))}
 

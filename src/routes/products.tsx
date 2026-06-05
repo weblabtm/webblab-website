@@ -21,28 +21,28 @@ const products = [
     tag: "Operations platform",
     desc: "Unified workspace for ops teams — projects, automations, and reporting in one place.",
     status: "In production",
-    image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=600&q=70&auto=format&fit=crop",
   },
   {
     name: "Strand Analytics",
     tag: "Product analytics",
     desc: "Lightweight, privacy-first analytics for SaaS teams that need clarity without bloat.",
     status: "Beta",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=70&auto=format&fit=crop",
   },
   {
     name: "Webbnet",
     tag: "Integration hub",
     desc: "Connect any API to any workflow with a visual orchestration canvas.",
     status: "Early access",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=70&auto=format&fit=crop",
   },
   {
     name: "Silk Auth",
     tag: "Identity",
     desc: "Drop-in authentication and role-based access designed for modern SaaS.",
     status: "Coming soon",
-    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=600&q=70&auto=format&fit=crop",
   },
 ];
 
@@ -52,10 +52,11 @@ function ProductsPage() {
       <section className="relative overflow-hidden bg-hero">
         {/* Background Image Overlay */}
         <img
-          src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&q=80"
+          src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=60&auto=format&fit=crop"
           alt=""
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover opacity-[0.06]"
+          loading="eager"
         />
         <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
           <ScrollReveal variant="fade-up" duration={600}>
@@ -84,6 +85,7 @@ function ProductsPage() {
                     src={p.image}
                     alt={p.name}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-card/90 to-transparent" />
                   <span className="absolute top-3 left-3 text-[10px] font-bold text-primary uppercase tracking-wider bg-background/80 backdrop-blur px-2.5 py-1 rounded-full border border-border/40">

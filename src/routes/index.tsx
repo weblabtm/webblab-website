@@ -38,6 +38,13 @@ export const Route = createFileRoute("/")({
         content: "We design and build SaaS products for ambitious teams.",
       },
     ],
+    links: [
+      {
+        rel: "preload",
+        as: "image",
+        href: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1000&q=60&auto=format&fit=crop",
+      },
+    ],
   }),
   component: Index,
 });
@@ -129,6 +136,8 @@ function Index() {
                   alt=""
                   aria-hidden="true"
                   className="absolute inset-0 h-full w-full object-cover opacity-20 z-0"
+                  loading={idx === 0 ? "eager" : "lazy"}
+                  {...(idx === 0 ? { fetchPriority: "high" } : {})}
                 />
                 {/* Dynamic spider web (alternating corner position) — slides with carousel, bright opacity */}
                 {/* Dark vignette under the spider web to blend it naturally with the background */}
@@ -307,6 +316,7 @@ function Index() {
                       src={p.image}
                       alt={p.title}
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-card/90 to-transparent" />
                     <span className="absolute top-3 left-3 text-xs font-medium text-primary uppercase tracking-wider bg-background/70 backdrop-blur px-2.5 py-1 rounded-full border border-border/40">
@@ -403,6 +413,7 @@ function Index() {
                       src={tech.image}
                       alt={tech.name}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-card/90 via-card/40 to-transparent" />
                     
@@ -484,7 +495,7 @@ const projects = [
     title: "SilkRoad CRM",
     tag: "Enterprise SaaS",
     year: "2026",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=70&auto=format&fit=crop",
     description: "A secure, multi-tenant CRM featuring real-time collaborative pipelines, high-performance database design, and deep Salesforce API sync integrations.",
     stack: ["React", "TypeScript", "PostgreSQL", "Cloudflare"],
   },
@@ -492,7 +503,7 @@ const projects = [
     title: "AetherFlow API",
     tag: "Developer Tools",
     year: "2025",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=70&auto=format&fit=crop",
     description: "An ultra-low latency, edge-rendered API gateway capable of processing millions of daily transactions with integrated security layers and audit logs.",
     stack: ["Vite", "Nitro", "Bun", "WebSockets"],
   },
@@ -500,7 +511,7 @@ const projects = [
     title: "CryptNet Dashboard",
     tag: "FinTech Security",
     year: "2025",
-    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=600&q=70&auto=format&fit=crop",
     description: "A specialized compliance management vault built with end-to-end encryption, multi-tenant workspace separation, and activity monitoring logs.",
     stack: ["Next.js", "Zod", "WebCrypto", "Tailwind CSS"],
   },
@@ -538,28 +549,28 @@ const techStack = [
     name: "React 19 & TypeScript",
     icon: Code2,
     tagline: "Type-Safe Client Architecture",
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&q=60&auto=format&fit=crop",
     description: "Robust type declarations across backend and UI prevent entire classes of bugs before compile-time.",
   },
   {
     name: "TanStack Router & Query",
     icon: Activity,
     tagline: "State Management & Syncing",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&q=60&auto=format&fit=crop",
     description: "Declarative, type-safe nested layout routing coupled with server-state caching for zero latency navigation.",
   },
   {
     name: "Vite, Nitro & Bun",
     icon: Zap,
     tagline: "Modern Engineering Engine",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&q=60&auto=format&fit=crop",
     description: "High-speed bundlers, fast package managers, and production runtime environments for optimized load speeds.",
   },
   {
     name: "Tailwind CSS v4",
     icon: Layers,
     tagline: "Premium Utility Styling",
-    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=400&q=60&auto=format&fit=crop",
     description: "Custom design systems using modern HSL and OKLCH color spaces, rendering beautiful visual experiences.",
   },
 ];
@@ -583,7 +594,7 @@ const heroSlides: HeroSlide[] = [
   {
     icon: Sparkles,
     eyebrow: "SaaS product studio",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1000&q=60&auto=format&fit=crop",
     titleStart: "Software,",
     titleAccent: "woven",
     titleEnd: "with precision.",
@@ -599,7 +610,7 @@ const heroSlides: HeroSlide[] = [
   {
     icon: Cloud,
     eyebrow: "Built for scale",
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1600&q=80",
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1000&q=60&auto=format&fit=crop",
     titleStart: "Multi-tenant SaaS,",
     titleAccent: "engineered",
     titleEnd: "from day one.",
@@ -615,7 +626,7 @@ const heroSlides: HeroSlide[] = [
   {
     icon: Workflow,
     eyebrow: "Automation & APIs",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1000&q=60&auto=format&fit=crop",
     titleStart: "Connect every",
     titleAccent: "thread",
     titleEnd: "of your business.",

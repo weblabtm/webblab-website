@@ -20,7 +20,7 @@ const studies = [
     title: "SilkRoad CRM",
     tag: "Enterprise SaaS",
     year: "2026",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=70&auto=format&fit=crop",
     metrics: [
       { value: "sub-2s", label: "Salesforce Sync Latency" },
       { value: "99.997%", label: "Database Read Uptime" },
@@ -36,7 +36,7 @@ const studies = [
     title: "AetherFlow API",
     tag: "Developer Tools",
     year: "2025",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=70&auto=format&fit=crop",
     metrics: [
       { value: "8ms", label: "Edge Response Time" },
       { value: "50M+", label: "Processed Requests Daily" },
@@ -52,7 +52,7 @@ const studies = [
     title: "CryptNet Dashboard",
     tag: "FinTech Security",
     year: "2025",
-    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=600&q=70&auto=format&fit=crop",
     metrics: [
       { value: "100%", label: "End-to-End Encryption" },
       { value: "Zod", label: "Zero-Trust Schema Validations" },
@@ -72,10 +72,11 @@ function CaseStudiesPage() {
       {/* Hero section */}
       <section className="relative overflow-hidden bg-hero">
         <img
-          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&q=80"
+          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=60&auto=format&fit=crop"
           alt=""
           aria-hidden="true"
           className="absolute inset-0 h-full w-full object-cover opacity-[0.06]"
+          loading="eager"
         />
         <div className="relative mx-auto max-w-7xl px-6 py-24 md:py-32">
           <ScrollReveal variant="fade-up" duration={600}>
@@ -104,6 +105,7 @@ function CaseStudiesPage() {
                       src={s.image}
                       alt={s.title}
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-card/85 via-transparent to-transparent" />
                     
